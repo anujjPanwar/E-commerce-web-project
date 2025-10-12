@@ -1,0 +1,30 @@
+.desc-cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: yellow; */
+}   
+.description-container{
+   width: 1250px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.desc-cont .description{
+    border: solid 1px;
+    
+}
+.desc-cont .desc-nav{
+    display: flex;
+    /* gap: 20px; */
+}
+.description p{
+    font-weight: 400;
+    color: rgb(87, 84, 84);
+    padding: 20px;
+}
+.desc-nav p{
+    font-weight: 500;
+    padding: 10px;
+    border: solid 1px;
+}

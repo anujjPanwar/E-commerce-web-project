@@ -1,0 +1,59 @@
+.login-signup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: linear-gradient(180deg, #47fdae 3%,#f6fffbf4 50% );
+
+}
+.login-signup .login-signup-container{
+    display: flex;
+    flex-direction: column;
+    border: solid rgb(181, 169, 169) 2px;
+    border-radius: 10px;
+    padding: 28px;
+    gap: 30px;
+    max-width: 430px;
+    background-color: white;
+}
+.login-signup h2{
+    font-size: 40px;
+}
+.login-signup input{
+    padding: 10px;
+    border-radius: 3px;
+    border: solid 1px;
+}
+.login-signup button{
+    padding: 7px;
+    background-color:rgb(247, 32, 32);
+    color: white;
+    font-size: 20px;
+    border: none ;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.login-signup button:active{
+    background-color: rgb(172, 95, 95);
+    color: rgb(84, 71, 71);
+}
+.login-signup p{
+    font-weight: 500;
+    color: rgb(93, 91, 91);
+}
+.login-signup span{
+    color: rgb(247, 32, 32);
+    cursor: pointer;
+
+}
+.login-signup span:active{
+    color: rgb(59, 31, 31);
+}
+.login-signup .check-box{
+    display: flex;
+    align-items:first baseline;
+    gap: 6px;
+}
+.check-box input{
+    cursor: pointer;
+}

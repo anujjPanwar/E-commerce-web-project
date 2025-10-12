@@ -1,0 +1,83 @@
+
+
+
+.hero {
+    /* height: 100vh; */
+    /* max-width: 1200px; */
+    background-image: linear-gradient(180deg, #47fdae, #3a331c22 60%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-containor{
+    display: flex;
+    height: 100vh;
+    width: 1250px;
+    align-items: center;
+    justify-content: center;
+    /* background-color: yellow; */
+}
+
+.hero-left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 5px;
+    /* padding-left: 80px; */
+    line-height: 1.1;
+    margin-top: -55px;
+    /* background-color: red; */
+
+}
+.hero-left h2{
+    color: #090909;
+    font-size: 26px;
+    font-weight: 600;
+}
+.hero-left .hand-hand-icon p{
+    color: #171717;
+    font-size: 60px;
+    font-weight: 700;
+}
+.hero-left .hand-hand-icon{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.hero-left p{
+    color: #171717;
+    font-size: 80px;
+    font-weight: 700;
+}
+.hero-latest-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 250px;
+    height: 50px;
+    border-radius: 75px;
+    margin-top: 30px;
+    background-color: #ff4141;
+    color: white;
+    font-size: 22px;
+    font-weight:600;
+    cursor: pointer;
+
+}
+.hero-latest-btn:active{
+    background-color: antiquewhite;
+    color: #171717;
+}
+.hero-right{
+    /* color: #; */
+    display: flex;
+    align-items: center;
+    /* background-color: green; */
+}
+.hero-men-img{
+    margin-right: -80px;
+}

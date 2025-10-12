@@ -1,0 +1,32 @@
+.popular{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(180deg,  #3a331c22 60%,#47fdae );
+    display: flex;
+}
+.popular h2{
+    font-size: 40px;
+}
+.popular hr{
+    width: 300px;
+    height: 5px;
+    background-color:#414141;
+}
+.popular .popular-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+}
+.popular-item-containor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}

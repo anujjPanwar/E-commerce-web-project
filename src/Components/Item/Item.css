@@ -1,0 +1,30 @@
+.item-containor{
+    border-radius: 30px;
+    border: 2px solid black;
+    /* background-color: yellow; */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.item-containor img{
+    border-radius: 30px 30px 0 0;
+}
+.item-containor .price{
+    display: flex;
+    /* gap: px; */
+    /* margin-left: 0px; */
+}
+.item-containor p{
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 20px;
+}
+.item-containor .old-price{
+    color: gray;
+    text-decoration: line-through;
+}
+.item-containor .new-price{
+    font-weight: 500;
+}
+.item-containor:hover{
+    transform: scale(1.1);
+}
