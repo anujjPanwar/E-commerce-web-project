@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./LoginSignup.css";
-function LoginSignup() {
+import { useNavigate } from "react-router-dom";
+import { dataContext } from "../../Context/MainContext";
+import { Link } from "react-router-dom";
+function LoginSignup({ title }) {
   const defaultValues = {
     name: "",
     email: "",
@@ -13,9 +16,10 @@ function LoginSignup() {
     password: "false",
     checkBox: "false",
   });
-
+  const navigate = useNavigate();
   const [formValues, setFormValues] = useState(defaultValues);
   const [errors, setError] = useState({});
+  const { login, setlogin ,setisLogin,setUserName} = useContext(dataContext);
 
   // useEffect(()=>{
 
@@ -42,8 +46,41 @@ function LoginSignup() {
   };
 
   const handleSubmit = () => {
-    console.log(formValues);
     setError(validate(formValues));
+    console.log("errors  //////  " + Object.keys(validate(formValues)).length);
+    if (Object.keys(validate(formValues)).length == 0) {
+      const userData = JSON.parse(localStorage.getItem("userDetails")) || [];
+      if (title == "Sign Up") {
+        const res = userData.some((i) => {
+          return i.email == formValues.email;
+        });
+        if (!res) {
+          const arr = [...userData];
+          arr.push(formValues);
+          localStorage.setItem("userDetails", JSON.stringify(arr));
+          // setlogin(1);
+          navigate("/Signup");
+        } else {
+          alert("User with this mail already exist!");
+        }
+      } else {
+        const isExist = userData.some((value) => {
+          return (
+            value.name == formValues.name &&
+            value.email == formValues.email &&
+            value.password == formValues.password
+          );
+        });
+        if (isExist) {
+          setlogin(1);
+          setisLogin("Log Out")
+          setUserName(( `Hi\u00A0\u00A0\u00A0${formValues.name}`));
+          navigate("/");
+        }else{
+            alert("Wrong Credientials!")
+          }
+      }
+    }
   };
 
   const validate = (values) => {
@@ -75,7 +112,7 @@ function LoginSignup() {
   return (
     <div className="login-signup">
       <div className="login-signup-container">
-        <h2>Sign Up</h2>
+        <h2>{title}</h2>
         <input
           type="text"
           placeholder="Your Name"
@@ -117,7 +154,10 @@ function LoginSignup() {
         )}
         <button onClick={handleSubmit}>Continue</button>
         <p>
-          Already have an account ? <span>Login here</span>
+          Already have an account ?{" "}
+          <Link to="/Signup" style={{ textDecoration: "none" }}>
+            <span>Login here</span>
+          </Link>
         </p>
         <div className="check-box">
           <input

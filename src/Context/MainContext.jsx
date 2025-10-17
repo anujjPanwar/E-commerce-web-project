@@ -8,6 +8,9 @@ export const dataContext = createContext(null);
 export default function MainContext({ children }) {
   const [data, setData] = useState([]);
   const [count, setCount] = useState("0");
+  const [login, setlogin] = useState(0);
+  const [isLogin,setisLogin] = useState("Log In")
+  const [userName,setUserName] = useState("");
 
 
   useEffect(() => {
@@ -18,7 +21,7 @@ export default function MainContext({ children }) {
 
 
   return (
-    <dataContext.Provider value={{ all_product, data, setData, count,setCount }}>
+    <dataContext.Provider value={{ all_product, data, setData, count,setCount ,login,setlogin, isLogin,setisLogin,userName,setUserName}}>
       {children}
     </dataContext.Provider>
   );

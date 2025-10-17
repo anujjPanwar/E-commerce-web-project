@@ -2,10 +2,10 @@ import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
 import cart_icon from "../../assets/cart_logo.png";
-import { Link } from "react-router-dom";
+import { data, Link } from "react-router-dom";
 import { dataContext } from "../../Context/MainContext";
 export const Navbar = () => {
-
+  const { isLogin, setisLogin ,setlogin,userName,setUserName } = useContext(dataContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menu, setMenu] = useState("home");
   const { count } = useContext(dataContext);
@@ -62,8 +62,17 @@ export const Navbar = () => {
         </li>
       </ul>
       <div className="nav-login-cart">
+        <p className="userName">{userName}</p>
         <Link style={{ textDecoration: "none" }} to="/loginSignup">
-          <button>Login</button>
+          <button
+            onClick={() => {
+              setisLogin("Log In")
+              setlogin(0)
+              setUserName("")
+            }}
+          >
+            {isLogin}
+          </button>
         </Link>
         <Link style={{ textDecoration: "none" }} to="/cart">
           <img src={cart_icon} alt="cart_icon" height="50px" />
@@ -72,7 +81,7 @@ export const Navbar = () => {
       </div>
       <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         ☰
-        <ul className={`nav-menu-popup ${isMenuOpen ? 'active' : ''}`}>
+        <ul className={`nav-menu-popup ${isMenuOpen ? "active" : ""}`}>
           <li>
             {" "}
             <Link style={{ textDecoration: "none", color: "black" }} to="/">
@@ -105,4 +114,4 @@ export const Navbar = () => {
       </div>
     </div>
   );
-}
+};

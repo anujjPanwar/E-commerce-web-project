@@ -60,6 +60,15 @@
     gap: 40px;
     position:relative;
 }
+.nav-login-cart .userName{
+    color: rgb(34, 142, 15);
+    font-weight: 600;
+    /* position: absolute;
+    left: -120px; */
+
+}
+
+
 .nav-cart-count{
     padding: 1px;
     display: flex;

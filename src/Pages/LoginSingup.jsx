@@ -4,7 +4,7 @@ import LoginSignup from '../Components/LoginSignup/LoginSignup'
 function LoginSingup() {
   return (
     <div>
-      <LoginSignup />
+      <LoginSignup title={"Sign Up"} />
     </div>
   )
 }
